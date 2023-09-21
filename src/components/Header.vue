@@ -6,10 +6,10 @@
           <div class="logo">Shakil's | Tech blog</div>
         </a>
       </div>
-      <div class="menu-trigger">menu</div>
+      <div class="menu-trigger" @click="menuToggle">menu</div>
     </div>
 
-    <nav class="menu">
+    <nav class="menu" v-show="menu">
       <ul class="menu__inner menu__inner--desktop">
         <li>
           <a href="https://github.com/creekorful/blog">Blog source code</a>
@@ -37,6 +37,18 @@
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
 
-<style lang="scss" scoped></style>
+const menu = ref(false);
+
+const menuToggle = () => {
+    menu.value = !menu.value;
+}
+</script>
+
+<style lang="css" scoped>
+.menu-trigger {
+    cursor: pointer;
+}
+</style>

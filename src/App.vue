@@ -12,7 +12,6 @@ import Header from './components/Header.vue';
 
     <RouterView />
 
-
     <footer class="footer">
       <div class="footer__inner">
         <div class="copyright">
